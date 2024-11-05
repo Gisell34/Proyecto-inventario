@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devoluciones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #dddfc7;
+            color: #444552;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(to right, #9495b9, #7bc0c5);
+            padding: 10px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .admin-panel {
+            max-width: 700px;
+            margin: 35px auto;
+            padding: 40px;
+            background: #f8f8f8;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .admin-panel h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        form label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form input[type="number"],
+        form textarea,
+        form input[type="date"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .button-group input[type="submit"] {
+            padding: 12px 10px;
+            background: linear-gradient(to right, #3b82f6, #3b82f6);
+            color: white;
+            border: none;
+            border-radius: 11px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-group input[type="submit"]:hover {
+            background-color: #2563eb;
+        }
+    </style>
+</head>
+
+<body>
+    <header><header>
+        <nav>
+            <a href="admin.php" class="back-to-admin">Regresar al panel del Administrador</a>
+        </nav>
+    </header>
+        <h1>Devoluciones</h1>
+    </header>
+
+    <div id="Devoluciones" style="display: none;">
+        <h2>Lista de productos en inventario</h2>
+        <a href="#" onclick="ocultarSecciones();">Regresar</a>
+        <a href="formulario.php" class="button">Agregar producto</a>
+        <div class="search-container">
+            <input type="text" id="buscarProducto" onkeyup="buscarProducto()" placeholder="Buscar producto...">
+            <button onclick="buscarProducto()">Buscar</button>
+        </div>
+</body>
+</html>
