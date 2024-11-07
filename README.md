@@ -48,3 +48,7 @@ de optimizar la gestión de inventario y la contabilidad de la compañía.
 1. Clona el repositorio:
    ```bash
    git clone https://github.com/Gisell34/Proyecto-inventario.git
+
+2. Agregar Base de Datos a servidor Local
+
+3. Abrir Proyecto desde servidor local
