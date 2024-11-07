@@ -1,0 +1,1034 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f3e5;
+    margin: 0px;
+    padding: 0px;
+}
+
+h1 {
+    text-align: center;
+    padding: 10px;
+    background-color: #e4eb81;
+    color: rgb(119, 106, 106);
+    margin: 0px;
+}
+
+.list-container {
+    width: 96%;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: rgb(229, 240, 133);
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(80, 63, 63, 0.1);
+    overflow-x: visible;
+}
+
+.list-container table {
+    width: 84%;
+    border-collapse: separate;
+    background-color: #fdfcfc;
+    table-layout: auto;
+}
+
+.list-container th,
+.list-container td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #a6a8ee;
+    vertical-align: middle;
+    height: 30px;
+}
+
+.list-container th {
+    background-color: #e4eb81;
+    color: rgb(63, 47, 47);
+}
+
+.list-container tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.list-container tr:hover {
+    background-color: #f1f1f1;
+}
+
+.list-container table a {
+    color: rgb(63, 47, 47);
+    text-decoration: none;
+    padding: 3px 10px;
+    margin-right: 5px;
+    border-radius: 4px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.list-container table a.modificar {
+    background-color: #5fa361;
+}
+
+.list-container table a.eliminar {
+    background-color: #f07971;
+}
+
+.list-container table a.activar {
+    background-color: #6baee4;
+}
+
+.list-container table a.inactivar {
+    background-color: #FFC107;
+}
+
+.list-container table a:hover {
+    opacity: 0.8;
+}
+
+.user .list-container {
+    width: 85%;
+    margin: 20px auto;
+    padding: 0px;
+    background-color: rgb(229, 240, 133);
+    border-radius: 8px;
+    box-shadow: 0 0 0.1px rgba(80, 63, 63, 0.1);
+    overflow-x: auto;
+}
+
+.user .list-container table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fdfcfc;
+}
+
+.user .list-container th,
+.user .list-container td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #a6a8ee;
+    vertical-align: middle;
+    height: 30px;
+}
+
+.user .list-container th {
+    background-color: #e4eb81;
+    color: rgb(63, 47, 47);
+}
+
+.user .list-container tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.user .list-container tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+.user .list-container table a {
+    color: rgb(63, 47, 47);
+    text-decoration: none;
+    padding: 3px 10px;
+    margin-right: 5px;
+    border-radius: 4px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.user .list-container table a.modificar {
+    background-color: #5fa361;
+}
+
+.user .list-container table a.eliminar {
+    background-color: #f07971;
+}
+
+.user .list-container table a.activar {
+    background-color: #6baee4;
+}
+
+.user .list-container table a.inactivar {
+    background-color: #FFC107;
+}
+
+.user .list-container table a:hover {
+    opacity: 0.8;
+}
+
+form {
+    width: 50%;
+    margin: 20px auto;
+    padding: 50px;
+    background: rgb(226, 235, 152);
+    border-radius: 20px;
+    box-shadow: 0 0 6px rgba(167, 30, 30, 0.1);
+}
+
+form a.back-to-admin {
+    display: block;
+    margin-top: 20px;
+    background-color: #e4eb81;
+    color: rgb(60, 55, 55);
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+}
+
+form a.back-to-admin:hover {
+    background-color: #cfd8b8;
+}
+
+.user-section h2.registration-header {
+    background-color: #e4eb81;
+    color: rgb(73, 56, 56);
+    padding: 16px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.user-section p.registration-description {
+    color: rgb(100, 100, 100);
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+textarea {
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ee940c;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #eb9168;
+    color: rgb(68, 61, 61);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #e4eb81;
+}
+
+.form-message {
+    width: 70%;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.form-message.success {
+    background-color: #edf3b7;
+    border: 2px solid #cabd0b;
+    color: #3c763d;
+}
+
+.form-message.error {
+    background-color: #8b6c6c;
+    border: 2px solid #55242c;
+    color: #a94442;
+}
+.catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.producto {
+    border: 1px solid #e4eb81;
+    border-radius: 5px;
+    background-color: rgb(240, 238, 148);
+    padding: 20px;
+    margin: 10px;
+    width: 180px;
+    box-shadow: 0 0 10px rgba(128, 108, 108, 0.1);
+    text-align: center;
+}
+
+.producto h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.producto p {
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 80vh;
+}
+
+.sidebar {
+    width: 180px;
+    background-color: #fafafa;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.sidebar a {
+    color: rgb(85, 70, 70);
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background-color: #e4eb81;
+    text-align: center;
+}
+
+.sidebar a:hover {
+    background-color: #e4eb81;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.user-panel {
+    width: 100px;
+    background-color: #fdfcfc;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    position: fixed;
+    height: 60%;
+    right: 2;
+}
+
+.user-panel a {
+    color: rgb(88, 65, 65);
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-radius: 9px;
+    background-color: #e4eb81;
+    text-align: center;
+}
+
+.user-panel a:hover {
+    background-color: #e4eb81;
+}
+
+.button {
+    display: block;
+    width: calc(80% - 50px);
+    text-align: center;
+    margin: 15px auto;
+    padding: 10px 15px;
+    color: rgb(60, 55, 55);
+    background-color: #e4eb81;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #e4eb81;
+}
+
+.user-section {
+    margin-right: 240px;
+    padding: 20px;
+}
+
+.user-section h2 {
+    background-color: #e4eb81;
+    color: rgb(73, 56, 56);
+    padding: 5px;
+    border-radius: 4px;
+    margin-bottom: 7px;
+}
+
+form a.back-to-admin {
+    display: block;
+    margin-top: 20px;
+    background-color: #e4eb81;
+    color: rgb(60, 55, 55);
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+}
+
+form a.back-to-admin:hover {
+    background-color: #cfd8b8;
+}
+
+.user-section h2.registration-header {
+    background-color: #e4eb81;
+    color: rgb(73, 56, 56);
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.user-section p.registration-description {
+    color: rgb(100, 100, 100);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+textarea {
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ee940c;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #eb9168;
+    color: rgb(68, 61, 61);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #e4eb81;
+}
+
+.form-message {
+    width: 70%;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.form-message.success {
+    background-color: #edf3b7;
+    border: 2px solid #cabd0b;
+    color: #3c763d;
+}
+
+.form-message.error {
+    background-color: #8b6c6c;
+    border: 2px solid #55242c;
+    color: #a94442;
+}
+
+.catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.producto {
+    border: 1px solid #e4eb81;
+    border-radius: 5px;
+    background-color: rgb(240, 238, 148);
+    padding: 20px;
+    margin: 10px;
+    width: 100px;
+    box-shadow: 0 0 10px rgba(128, 108, 108, 0.1);
+    text-align: center;
+}
+
+.producto h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.producto p {
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 80vh;
+}
+
+.sidebar {
+    width: 180px;
+    background-color: #fafafa;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.sidebar a {
+    color: rgb(85, 70, 70);
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background-color: #e4eb81;
+    text-align: center;
+}
+
+.sidebar a:hover {
+    background-color: #e4eb81;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.user-panel {
+    width: 180px;
+    background-color: #fdfcfc;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    position: fixed;
+    height: 60%;
+    right: 0;
+}
+
+.user-panel a {
+    color: rgb(88, 65, 65);
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-radius: 9px;
+    background-color: #e4eb81;
+    text-align: center;
+}
+
+.user-panel a:hover {
+    background-color: #e4eb81;
+}
+
+.button {
+    display: block;
+    width: calc(80% - 50px);
+    text-align: center;
+    margin: 15px auto;
+    padding: 10px 15px;
+    color: rgb(60, 55, 55);
+    background-color: #e4eb81;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #e4eb81;
+}
+
+.user-section {
+    margin-right: 240px;
+    padding: 20px;
+}
+
+.user-section h2 {
+    background-color: #e4eb81;
+    color: rgb(73, 56, 56);
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+form a.back-to-admin {
+    display: block;
+    margin-top: 20px;
+    background-color: #e4eb81;
+    color: rgb(60, 55, 55);
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+}
+
+form a.back-to-admin:hover {
+    background-color: #cfd8b8;
+}
+
+.user-section h2.registration-header {
+    background-color: #e4eb81;
+    color: rgb(73, 56, 56);
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.user-section p.registration-description {
+    color: rgb(100, 100, 100);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+textarea {
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ee940c;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #eb9168;
+    color: rgb(68, 61, 61);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #e4eb81;
+}
+
+.form-message {
+    width: 70%;
+    margin:20px auto;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.form-message.success {
+    background-color: #edf3b7;
+    border: 2px solid #cabd0b;
+    color: #3c763d;
+}
+
+.form-message.error {
+    background-color: #8b6c6c;
+    border: 2px solid #55242c;
+    color: #a94442;
+}
+
+.catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.producto {
+    border: 1px solid #e4eb81;
+    border-radius: 5px;
+    background-color: rgb(240, 238, 148);
+    padding: 20px;
+    margin: 10px;
+    width: 180px;
+    box-shadow: 0 0 10px rgba(128, 108, 108, 0.1);
+    text-align: center;
+}
+
+.producto h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.producto p {
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 80vh;
+}
+
+.sidebar {
+    width: 180px;
+    background-color: #fafafa;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.sidebar a {
+    color: rgb(85, 70, 70);
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background-color: #e4eb81;
+    text-align: center;
+}
+
+.sidebar a:hover {
+    background-color: #e4eb81;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.user-panel {
+    width: 180px;
+    background-color: #fdfcfc;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    position: fixed;
+    height: 60%;
+    right: 0;
+}
+
+.user-panel a {
+    color: rgb(88, 65, 65);
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-radius: 9px;
+    background-color: #e4eb81;
+    text-align: center;
+}
+
+.user-panel a:hover {
+    background-color: #e4eb81;
+}
+
+.button {
+    display: block;
+    width: calc(80% - 50px);
+    text-align: center;
+    margin: 15px auto;
+    padding: 10px 15px;
+    color: rgb(60, 55, 55);
+    background-color: #e4eb81;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #e4eb81;
+}
+
+.user-section {
+    margin-right: 240px;
+    padding: 20px;
+}
+
+.user-section h2 {
+    background-color: #e4eb81;
+    color: rgb(73, 56, 56);
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+form a.back-to-admin {
+    display: block;
+    margin-top: 20px;
+    background-color: #e4eb81;
+    color: rgb(60, 55, 55);
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+}
+
+form a.back-to-admin:hover {
+    background-color: #cfd8b8;
+}
+
+
+.user-section h2.registration-header {
+    background-color: #e4eb81;
+    color: rgb(73, 56, 56);
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.user-section p.registration-description {
+    color: rgb(100, 100, 100);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.registration-form {
+    width: 50%;
+    margin: 20px auto;
+    padding: 50px;
+    background: rgb(226, 235, 152);
+    border-radius: 20px;
+    box-shadow: 0 0 6px rgba(167, 30, 30, 0.1);
+}
+
+.registration-form label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+.registration-form input[type="text"],
+.registration-form input[type="number"],
+.registration-form input[type="password"],
+.registration-form textarea {
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ee940c;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.registration-form input[type="submit"] {
+    background-color: #eb9168;
+    color: rgb(68, 61, 61);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.registration-form input[type="submit"]:hover {
+    background-color: #e4eb81;
+}
+
+.registration-form .form-message {
+    width: 70%;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.registration-form .form-message.success {
+    background-color: #edf3b7;
+    border: 2px solid #cabd0b;
+    color: #3c763d;
+}
+
+.registration-form .form-message.error {
+    background-color: #8b6c6c;
+    border: 2px solid #55242c;
+    color: #a94442;
+}
+
+.registration-form a.back-to-admin {
+    display: block;
+    margin-top: 20px;
+    background-color: #e4eb81;
+    color: rgb(60, 55, 55);
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.registration-form a.back-to-admin:hover {
+    background-color: #cfd8b8;
+}
+
+
+
+/* Estilos para el formulario de proveedor */
+form {
+    width: 50%;
+    margin: 20px auto;
+    padding: 50px;
+    background: rgb(226, 235, 152);
+    border-radius: 20px;
+    box-shadow: 0 0 6px rgba(167, 30, 30, 0.1);
+}
+
+form a.back-to-admin {
+    display: block;
+    margin-top: 20px;
+    background-color: #e4eb81;
+    color: rgb(60, 55, 55);
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+}
+
+form a.back-to-admin:hover {
+    background-color: #cfd8b8;
+}
+
+h2 {
+    background-color: #e4eb81;
+    color: rgb(73, 56, 56);
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ee940c;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #eb9168;
+    color: rgb(68, 61, 61);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #e4eb81;
+}
+
+.form-message {
+    width: 70%;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.form-message.success {
+    background-color: #edf3b7;
+    border: 2px solid #cabd0b;
+    color: #3c763d;
+}
+
+.form-message.error {
+    background-color: #8b6c6c;
+    border: 2px solid #55242c;
+    color: #a94442;
+}
+
+/* Estilos específicos para el formulario de agregar proveedor */
+.proveedor-form {
+    width: 50%;
+    margin: 20px auto;
+    padding: 50px;
+    background: rgb(226, 235, 152);
+    border-radius: 20px;
+    box-shadow: 0 0 6px rgba(167, 30, 30, 0.1);
+}
+
+.proveedor-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.proveedor-form input[type="text"],
+.proveedor-form input[type="number"],
+.proveedor-form input[type="email"],
+.proveedor-form input[type="password"],
+.proveedor-form textarea {
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ee940c;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.proveedor-form input[type="submit"] {
+    background-color: #eb9168;
+    color: rgb(68, 61, 61);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.proveedor-form input[type="submit"]:hover {
+    background-color: #e4eb81;
+}
+
+.proveedor-form .form-message {
+    width: 70%;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.proveedor-form .form-message.success {
+    background-color: #edf3b7;
+    border: 2px solid #cabd0b;
+    color: #3c763d;
+}
+
+.proveedor-form .form-message.error {
+    background-color: #8b6c6c;
+    border: 2px solid #55242c;
+    color: #a94442;
+}
+
+.proveedor-form a.back-to-admin {
+    display: block;
+    margin-top: 20px;
+    background-color: #e4eb81;
+    color: rgb(60, 55, 55);
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.proveedor-form a.back-to-admin:hover {
+    background-color: #cfd8b8;
+}

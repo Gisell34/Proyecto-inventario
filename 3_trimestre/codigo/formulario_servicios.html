@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Agregar servicios</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <h2>Formulario para agregar servicios</h2> 
+
+    <a href="admin.php" class="back-to-admin">Volver a Panel de Administración</a>
+
+    <form action="guardar_servicio.php" method="post" class="servicio-form">  
+
+        <label for="Nombre_servicio">Nombre del servicio:</label>
+        <input type="text" id="Nombre_servicio" name="Nombre_servicio" required>
+        
+        <label for="Tipo_servicio">Tipo de serivio:</label>
+        <input type="text" id="Tipo_servicio" name="Tipo_servicio" required>
+        
+        <label for="Estado">Estado:</label>
+        <input type="text" id="Estado" name="Estado" required>
+        
+        <input type="submit" value="GUARDAR SERVICIO">
+    </form> 
+
+</body>
+</html>

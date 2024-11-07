@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGREGAR PROVEEDOR</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <a href="admin.php" class="back-to-admin">Volver a Panel de Administración</a>
+    <h2>Formulario registro de proveedores</h2> 
+    <form action="guardar_proveedor.php" method="post" class="proveedor-form">  
+        <label for="Nombre_proveedor">Nombre del proveedor:</label>
+        <input type="text" id="Nombre_proveedor" name="Nombre_proveedor" required>
+        
+        <label for="Nit">Nit:</label>
+        <input type="text" id="Nit" name="Nit" required>
+        
+        <label for="Cantidad_total">Cantidad:</label>
+        <input type="number" id="Cantidad_total" name="Cantidad_total" required> 
+        
+        <label for="Direccion">Direccion:</label>
+        <input type="text" id="Direccion" name="Direccion" required>     
+        
+        <label for="Telefono">Telefono:</label>
+        <input type="text" id="Telefono" name="Telefono" required>     
+        
+        <label for="Correo_electronico">Correo electronico:</label>
+        <input type="email" id="Correo_electronico" name="Correo_electronico" required> 
+        
+        <label for="Correo_factura">Correo factura:</label>
+        <input type="email" id="Correo_factura" name="Correo_factura" required>
+        
+        <input type="submit" value="GUARDAR PROVEEDOR">
+    </form> 
+</body>
+</html>
