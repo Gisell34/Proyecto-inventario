@@ -1,0 +1,1 @@
+Archivos de logs para el registro de actividades del sistema, errores o información para el desarrollo.
