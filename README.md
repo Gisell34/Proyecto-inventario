@@ -1,4 +1,4 @@
-__Sistema de Control de Inventario y Ventas Online - Licores Don Chepe__ ![logo proyecto](https://github.com/user-attachments/assets/0213d78e-46c7-4797-89fb-a229b73f65a8)
+__Sistema de Control de Inventario y Ventas Online - Licores Don Chepe__ ![logo proyecto](https://github.com/user-attachments/assets/f6de92cc-2898-4994-9153-17778a494d08)
 
 
 * __Descripción__
