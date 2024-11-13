@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de proveedores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #dddfc7;
+            color: #444552;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(to right, #9495b9, #7bc0c5);
+            padding: 10px 0;
+            text-align: center;
+            color: rgb(248, 247, 247);
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav a {
+            color: rgb(19, 15, 15);
+            text-decoration: none;
+            padding: 20px 20px;
+            border-radius: 5px;
+            background: linear-gradient(to right, #9495b9, #7bc0c5);
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #899da4;
+        }
+
+        .admin-panel {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f8f8f8;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .admin-panel h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .admin-panel a {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            background: linear-gradient(to right, #9495b9, #7bc0c5);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .admin-panel a:hover {
+            background-color: #899da4;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        form label {
+            font-weight: bold;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form input[type="number"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form input[type="submit"] {
+            padding: 10px;
+            background: linear-gradient(to right, #9495b9, #7bc0c5);
+            color: rgb(14, 11, 11);
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #899da4;
+        }
+    </style>
+<script>
+    function validateForm() {
+        var nombreProveedor = document.getElementById("Nombre_proveedor").value;
+        var nit = document.getElementById("Nit").value;
+        var cantidadTotal = document.getElementById("Cantidad_total").value;
+        var telefono = document.getElementById("Telefono").value;
+        var correoElectronico = document.getElementById("Correo_electronico").value;
+        var correoFactura = document.getElementById("Correo_factura").value;
+        var textRegex = /^[a-zA-Z\s]+$/;
+        if (!textRegex.test(nombreProveedor)) {
+            alert("El nombre del proveedor solo deben contener letras y espacios.");
+            return false;
+        }
+
+        var numberRegex = /^[0-9]+$/;
+        if (!numberRegex.test(nit) || !numberRegex.test(cantidadTotal) || !numberRegex.test(telefono)) {
+            alert("El NIT, la cantidad total y el teléfono solo deben contener números.");
+            return false;
+        }
+
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(correoElectronico) || !emailRegex.test(correoFactura)) {
+            alert("Por favor, ingrese correos electrónicos válidos.");
+            return false;
+        }
+
+        return true;
+    }
+</script>
+</head>
+<body>
+<header>
+    <nav>
+        <a href="admin.php" class="back-to-admin">Volver al panel del Administrador</a>
+        <a href="lista-proveedores.php" onclick="event.stopPropagation();">Regresar</a>       
+    </nav>
+</header>
+
+<div class="admin-panel">
+    <h2>Registro de proveedores</h2>
+    <form action="guardar_proveedor.php" method="post" class="proveedor-form" onsubmit="return validateForm();">
+        <label for="Nombre_proveedor">Nombre del proveedor:</label>
+        <input type="text" id="Nombre_proveedor" name="Nombre_proveedor" required>
+        
+        <label for="Nit">Nit:</label>
+        <input type="number" id="Nit" name="Nit" required>
+        
+        <label for="Cantidad_total">Cantidad:</label>
+        <input type="number" id="Cantidad_total" name="Cantidad_total" required> 
+        
+        <label for="Direccion">Dirección:</label>
+        <input type="text" id="Direccion" name="Direccion" required>     
+        
+        <label for="Telefono">Teléfono:</label>
+        <input type="number" id="Telefono" name="Telefono" required>     
+        
+        <label for="Correo_electronico">Correo electrónico:</label>
+        <input type="email" id="Correo_electronico" name="Correo_electronico" required> 
+        
+        <label for="Correo_factura">Correo factura:</label>
+        <input type="email" id="Correo_factura" name="Correo_factura" required>
+        <input type="submit" value="Registrar proveedor">
+    </form> 
+</div>
+</body>
+</html>
