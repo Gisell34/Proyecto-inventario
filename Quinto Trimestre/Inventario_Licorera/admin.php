@@ -1,21 +1,6 @@
 <?php
 session_start();
 
-// Tiempo límite de inactividad en segundos (por ejemplo, 15 minutos)
-$tiempo_limite = 900; // 900 segundos = 15 minutos
-
-// Verificar si la sesión está activa y si hay tiempo de actividad registrado
-if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > $tiempo_limite)) {
-    // Si el tiempo de inactividad excede el límite, destruir la sesión
-    session_unset(); // Limpiar todas las variables de sesión
-    session_destroy(); // Destruir la sesión
-    header("Location: login.php"); // Redirigir al inicio de sesión
-    exit();
-}
-
-// Actualizar el tiempo de actividad
-$_SESSION['LAST_ACTIVITY'] = time();
-
 if (!isset($_SESSION['usuario']) || $_SESSION['rol'] != "Administrador") {
     header("Location: login.php");
     exit();

@@ -22,7 +22,7 @@ $totalproductos = $resultadoTotal->fetch_assoc()['total'];
 $totalPaginas = ceil($totalproductos / $productosPorPagina);
 ?>
 
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -180,7 +180,7 @@ $totalPaginas = ceil($totalproductos / $productosPorPagina);
                         <th>Acciones</th>
                     </tr>
                 </thead>
-                <tbody id="productos-list">
+                <tbody>
                     <?php while ($row = $resultado_productos_inventario->fetch_assoc()) :
                         $precio_compra = $row["Precio"];
                         $precio_venta = $row["precio_venta"];
@@ -228,7 +228,7 @@ $totalPaginas = ceil($totalproductos / $productosPorPagina);
     <script>
         function buscarProducto() {
             var input = document.getElementById("buscarProducto").value.toLowerCase();
-            var table = document.querySelector("#productos-list");
+            var table = document.querySelector(".productos-table tbody");
             var rows = table.getElementsByTagName("tr");
 
             for (var i = 0; i < rows.length; i++) {

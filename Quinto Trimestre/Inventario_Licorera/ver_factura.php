@@ -35,100 +35,89 @@ if ($id_factura > 0) {
 
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Factura</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
+   body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
 
-        .factura-container {
-            border: 1px solid #ccc;
-            padding: 20px;
-            max-width: 800px;
-            margin: auto;
-            background-color: #f9f9f9;
-        }
+.factura-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    background-color: #f9f9f9;
+}
 
-        h1 {
-            text-align: center;
-        }
+h1 {
+    text-align: center;
+}
 
-        .factura-info {
-            margin-bottom: 20px;
-        }
+.factura-info {
+    margin-bottom: 20px;
+}
 
-        .factura-info p {
-            margin: 3px 0;
-        }
+.factura-info p {
+    margin: 3px 0;
+}
 
-        h2 {
-            margin-top: 30px;
-            margin-bottom: 15px;
-        }
+h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 10px;
-        }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
 
-        table,
-        th,
-        td {
-            border: 1px solid #ddd;
-        }
+table, th, td {
+    border: 1px solid #ddd;
+}
 
-        th,
-        td {
-            padding: 8px;
-            text-align: left;
-        }
+th, td {
+    padding: 8px;
+    text-align: left;
+}
 
-        th {
-            background-color: #f2f2f2;
-        }
+th {
+    background-color: #f2f2f2;
+}
 
-        .th-encabezado {
-            background: linear-gradient(to right, #7bc0c5, #9495b9);
-            font-weight: bold;
-        }
+.th-encabezado {
+    background: linear-gradient(to right, #7bc0c5, #9495b9);
+    font-weight: bold;
+}
 
-        .total {
-            font-weight: bold;
-            font-size: 1.2em;
-            background: linear-gradient(to right, #7bc0c5, #9495b9);
-        }
+.total {
+    font-weight: bold;
+    font-size: 1.2em;
+    background: linear-gradient(to right, #7bc0c5, #9495b9);
+}
 
-        .metodo_pago {
-            font-weight: bold;
-            font-size: 1.2 em;
-            background: linear-gradient(to right, #7bc0c5, #9495b9);
-        }
+.btn-regresar {
+    display: block;
+    width: 200px;
+    margin: 10px auto;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(to right, #7bc0c5, #9495b9);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
 
-        .btn-regresar {
-            display: block;
-            width: 200px;
-            margin: 10px auto;
-            padding: 10px;
-            text-align: center;
-            color: #fff;
-            background: linear-gradient(to right, #7bc0c5, #9495b9);
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-
-        .btn-regresar:hover {
-            background: linear-gradient(to right, #7bc0c5, #9495b9);
-        }
+.btn-regresar:hover {
+    background: linear-gradient(to right, #7bc0c5, #9495b9);
+}
     </style>
 </head>
-
 <body>
     <a href="lista-facturas-usuario.php" class="btn-regresar">Regresar a Facturas</a>
     <h1>Detalles de la Factura</h1>
@@ -248,5 +237,4 @@ if ($id_factura > 0) {
         </table>
     </div>
 </body>
-
 </html>

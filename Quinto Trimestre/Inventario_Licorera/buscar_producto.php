@@ -17,7 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($resultado_busqueda->num_rows > 0) {
         $producto = $resultado_busqueda->fetch_assoc();
         $producto['existe'] = true;
-        $producto['mensaje'] = "Producto encontrado, puedes editar.";
         $producto['Existencias_totales'] = $producto['Cantidad_producto'];
         $producto['stock_minimo'] = $producto['stock_minimo'];
         $producto['stock_maximo'] = $producto['stock_maximo'];
@@ -26,10 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $producto['ganancias_totales'] = $producto['Cantidad_producto'] * $producto['ganancia'];
         echo json_encode($producto);
     } else {
-        echo json_encode([
-            'existe' => false,
-            'mensaje' => "Producto no encontrado, puedes registrar."
-        ]);
+        echo json_encode(['existe' => false]);
     }
 
     $stmt_buscar_producto->close();

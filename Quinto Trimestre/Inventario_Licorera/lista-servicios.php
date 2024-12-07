@@ -5,7 +5,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-$serviciosPorPagina = 4;
+$serviciosPorPagina = 2;
 $paginaActual = isset($_GET['pagina']) ? intval($_GET['pagina']) : 1;
 $inicio = ($paginaActual - 1) * $serviciosPorPagina;
 $busqueda = isset($_GET['busqueda']) ? trim($_GET['busqueda']) : '';

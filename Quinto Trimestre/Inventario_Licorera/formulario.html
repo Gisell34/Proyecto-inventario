@@ -85,25 +85,6 @@
         .mensaje-error {
             background-color: #dc3545;
         }
-
-        .mensaje-flotante {
-            display: none;
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #f8f9fa;
-            padding: 10px 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-        }
-        .mensaje-flotante.exito {
-            color: #28a745;
-        }
-        .mensaje-flotante.error {
-            color: #dc3545;
-        }
     </style>
 </head>
 <body>
@@ -124,7 +105,9 @@
         </form>
 
         <!-- Mensajes emergentes -->
-        <div id="mensajeFlotante" class="mensaje-flotante"></div>
+        <div class="mensaje-flotante" id="mensajeFlotante">
+            <?php echo htmlspecialchars($mensaje); ?>
+        </div>
 
         <form id="producto_form" action="guardar_producto.php" method="POST" style="display: none;">
             <h3>Editar Producto</h3>
@@ -196,60 +179,57 @@
     </div>
 
     <script>
-        document.getElementById('buscar_producto').addEventListener('click', function () {
+        // Mostrar el mensaje flotante de PHP si existe un mensaje
+        const mensaje = "<?php echo $mensaje; ?>";
+        if (mensaje) {
+            const mensajeFlotante = document.getElementById('mensajeFlotante');
+            mensajeFlotante.style.display = 'block';
+
+            setTimeout(() => {
+                mensajeFlotante.style.display = 'none';
+            }, 3000);
+        }
+
+        // Mostrar mensaje emergente si falta el nombre del producto
+        document.getElementById('buscar_producto').addEventListener('click', function(event) {
             const nombreProducto = document.getElementById('Nombre_producto').value;
-    
-            if (!nombreProducto.trim()) {
-                mostrarMensaje('Por favor, ingrese el nombre del producto para buscar.', 'error');
+
+            if (!nombreProducto) {
+                alert('Por favor, ingrese el nombre del producto para buscar.');
                 return;
             }
-    
+
             fetch('buscar_producto.php', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: 'Nombre_producto=' + encodeURIComponent(nombreProducto)
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'Nombre_producto=' + nombreProducto // Aquí estaba un error en la construcción del cuerpo de la petición
             })
             .then(response => response.json())
             .then(data => {
                 if (data.existe) {
                     document.getElementById('producto_form').style.display = 'block';
                     document.getElementById('register_form').style.display = 'none';
-                    llenarCamposEdicion(data);
-                    mostrarMensaje('Producto encontrado, puedes editar.', 'exito');
+
+                    document.getElementById('Codigoproducto').value = data.Codigoproducto;
+                    document.getElementById('Fabricante').value = data.Fabricante;
+                    document.getElementById('Tipo_producto').value = data.Tipo_producto;
+                    document.getElementById('Especificaciones').value = data.Especificaciones;
+                    document.getElementById('cantidad_anterior').value = data.Cantidad_producto;
+                    document.getElementById('existencias_total').value = data.Existencias_totales;
+                    document.getElementById('precio_venta').value = data.Precio_venta;
+                    document.getElementById('stock_minimo').value = data.stock_minimo;
+                    document.getElementById('stock_maximo').value = data.stock_maximo;
+                    document.getElementById('salida').value = data.salida;
+                    document.getElementById('ganancia').value = data.ganancia;
                 } else {
                     document.getElementById('producto_form').style.display = 'none';
                     document.getElementById('register_form').style.display = 'block';
-                    mostrarMensaje('Producto no encontrado, puedes registrar.', 'exito');
                 }
             })
-            .catch(error => {
-                console.error('Error:', error);
-                mostrarMensaje('Ocurrió un error al buscar el producto.', 'error');
-            });
+            .catch(error => console.error('Error:', error));
         });
-    
-        function llenarCamposEdicion(data) {
-            document.getElementById('Codigoproducto').value = data.Codigoproducto;
-            document.getElementById('Fabricante').value = data.Fabricante;
-            document.getElementById('Tipo_producto').value = data.Tipo_producto;
-            document.getElementById('Especificaciones').value = data.Especificaciones;
-            document.getElementById('cantidad_anterior').value = data.Cantidad_producto;
-            document.getElementById('existencias_total').value = data.Existencias_totales;
-            document.getElementById('precio_venta').value = data.Precio_venta;
-            document.getElementById('stock_minimo').value = data.stock_minimo;
-            document.getElementById('stock_maximo').value = data.stock_maximo;
-            document.getElementById('salida').value = data.salida;
-            document.getElementById('ganancia').value = data.ganancia;
-        }
-    
-        function mostrarMensaje(mensaje, tipo) {
-            const mensajeFlotante = document.getElementById('mensajeFlotante');
-            mensajeFlotante.textContent = mensaje;
-            mensajeFlotante.className = `mensaje-flotante ${tipo}`;
-            mensajeFlotante.style.display = 'block';
-    
-            setTimeout(() => {
-                mensajeFlotante.style.display = 'none';
-            }, 3000);
-        }
-    </script>    
+    </script>
+</body>
+</html>

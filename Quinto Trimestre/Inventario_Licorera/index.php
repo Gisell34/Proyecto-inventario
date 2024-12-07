@@ -120,22 +120,9 @@ session_start();
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        #sobre-nosotros {
-        background-image: url('imagenes/Proyecto.png'); /* Ruta a la carpeta e imagen */
-        background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
-        background-position: center; /* Centra la imagen en el contenedor */
-        background-repeat: no-repeat; /* Evita que la imagen se repita */
-        text-align: center;
-        padding: 40px 20px;
-        margin-top: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        height: 400px; /* Altura de ejemplo */
-        }
-
         header h1 {
             font-size: 4em;
-            color: #ecea58;
+            color: #2c4749;
         }
 
         header h2 span {
@@ -145,7 +132,7 @@ session_start();
         header p {
             font-size: 3.2em;
             margin-top: 10px;
-            color: #ecea58;
+            color: #fff;
         }
 
         #servicios {
@@ -348,11 +335,11 @@ session_start();
     </div>
 
     <header id="sobre-nosotros">
-        <h1 class="titulo">Licores Don chepe</h1>
+        <h1 class="titulo">María María Cantina</h1>
         <h2><span></span></h2>
-        <p>🍺🍺Vive la mejor experiencia en vivo🥂🥂</p>
-        <p>🎉🎆🎇Banda, Mariachi, Popular 🎙🎺🎤🎺</p>
-        <p>Eventos 💃 y fechas especiales 🕺</p>
+        <p>Vive la experiencia mexicana en vivo💥
+            Banda, Mariachi, Popular 🎙🎺🎤🎺
+            Eventos y fechas especiales</p>
     </header>
 
     <section id="servicios">

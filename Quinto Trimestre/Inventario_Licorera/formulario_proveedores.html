@@ -125,33 +125,26 @@
     }
     </style>
 <script>
-    // Validar los campos del formulario
     function validateForm() {
-        const nombreProveedor = document.getElementById("Nombre_proveedor").value;
-        const nit = document.getElementById("Nit").value;
-        const direccion = document.getElementById("Direccion").value;
-        const telefono = document.getElementById("Telefono").value;
-        const correoElectronico = document.getElementById("Correo_electronico").value;
-        const correoFactura = document.getElementById("Correo_factura").value;
-
-        const textRegex = /^[a-zA-Z\s]+$/;
+        var nombreProveedor = document.getElementById("Nombre_proveedor").value;
+        var nit = document.getElementById("Nit").value;
+        var cantidadTotal = document.getElementById("Cantidad_total").value;
+        var telefono = document.getElementById("Telefono").value;
+        var correoElectronico = document.getElementById("Correo_electronico").value;
+        var correoFactura = document.getElementById("Correo_factura").value;
+        var textRegex = /^[a-zA-Z\s]+$/;
         if (!textRegex.test(nombreProveedor)) {
-            alert("El nombre del proveedor solo debe contener letras y espacios.");
+            alert("El nombre del proveedor solo deben contener letras y espacios.");
             return false;
         }
 
-        const numberRegex = /^[0-9]+$/;
-        if (!numberRegex.test(nit) || !numberRegex.test(telefono)) {
-            alert("El NIT y el teléfono solo deben contener números.");
+        var numberRegex = /^[0-9]+$/;
+        if (!numberRegex.test(nit) || !numberRegex.test(cantidadTotal) || !numberRegex.test(telefono)) {
+            alert("El NIT, la cantidad total y el teléfono solo deben contener números.");
             return false;
         }
 
-        if (direccion.trim() === "") {
-            alert("La dirección no puede estar vacía.");
-            return false;
-        }
-
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(correoElectronico) || !emailRegex.test(correoFactura)) {
             alert("Por favor, ingrese correos electrónicos válidos.");
             return false;
@@ -159,60 +152,71 @@
 
         return true;
     }
-
-    // Mostrar mensajes de éxito o error
-    function showMessage(message, type) {
-        const messageDiv = document.createElement("div");
-        messageDiv.className = type === "success" ? "success-message" : "error-message";
-        messageDiv.textContent = message;
-        document.body.appendChild(messageDiv);
-
-        setTimeout(() => {
-            messageDiv.remove();
-        }, 3000);
-    }
 </script>
 </head>
 <body>
 <header>
-<nav>
-    <a href="admin.php" class="back-to-admin">Volver al panel del Administrador</a>
-    <a href="lista-proveedores.php" onclick="event.stopPropagation();">Regresar</a>
-</nav>
+    <nav>
+        <a href="admin.php" class="back-to-admin">Volver al panel del Administrador</a>
+        <a href="lista-proveedores.php" onclick="event.stopPropagation();">Regresar</a>       
+    </nav>
 </header>
 
 <div class="admin-panel">
-<h2>Registro de proveedores</h2>
-<form action="guardar_proveedor.php" method="post" class="proveedor-form" onsubmit="return validateForm();">
-    <label for="Nombre_proveedor">Nombre del proveedor:</label>
-    <input type="text" id="Nombre_proveedor" name="Nombre_proveedor" required>
-    
-    <label for="Nit">NIT:</label>
-    <input type="number" id="Nit" name="Nit" required>
-    
-    <label for="Direccion">Dirección:</label>
-    <input type="text" id="Direccion" name="Direccion" required>
-    
-    <label for="Telefono">Teléfono:</label>
-    <input type="number" id="Telefono" name="Telefono" required>
-    
-    <label for="Correo_electronico">Correo electrónico:</label>
-    <input type="email" id="Correo_electronico" name="Correo_electronico" required>
-    
-    <label for="Correo_factura">Correo factura:</label>
-    <input type="email" id="Correo_factura" name="Correo_factura" required>
-
-    <input type="submit" value="Registrar proveedor">
-</form>
+    <h2>Registro de proveedores</h2>
+    <form action="guardar_proveedor.php" method="post" class="proveedor-form" onsubmit="return validateForm();">
+        <label for="Nombre_proveedor">Nombre del proveedor:</label>
+        <input type="text" id="Nombre_proveedor" name="Nombre_proveedor" required>
+        
+        <label for="Nit">Nit:</label>
+        <input type="number" id="Nit" name="Nit" required>
+        
+        <label for="Cantidad_total">Cantidad:</label>
+        <input type="number" id="Cantidad_total" name="Cantidad_total" required> 
+        
+        <label for="Direccion">Dirección:</label>
+        <input type="text" id="Direccion" name="Direccion" required>     
+        
+        <label for="Telefono">Teléfono:</label>
+        <input type="number" id="Telefono" name="Telefono" required>     
+        
+        <label for="Correo_electronico">Correo electrónico:</label>
+        <input type="email" id="Correo_electronico" name="Correo_electronico" required> 
+        
+        <label for="Correo_factura">Correo factura:</label>
+        <input type="email" id="Correo_factura" name="Correo_factura" required>
+        <input type="submit" value="Registrar proveedor">
+    </form> 
 </div>
-
+</body>
+</html>
 <script>
-document.querySelector('.proveedor-form').addEventListener('submit', function(event) {
+    document.querySelector('.proveedor-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        if (!validateForm()) return;
+
+        var formData = new FormData(this);
+
+        fetch('guardar_proveedor.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            showMessage(data.message, data.success ? 'success' : 'error');
+        })
+        .catch(error => {
+            showMessage('Ocurrió un error al procesar la solicitud.', 'error');
+        });
+    });
+
+    document.querySelector('.proveedor-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
     if (!validateForm()) return;
 
-    const formData = new FormData(this);
+    var formData = new FormData(this);
 
     fetch('guardar_proveedor.php', {
         method: 'POST',
@@ -221,15 +225,25 @@ document.querySelector('.proveedor-form').addEventListener('submit', function(ev
     .then(response => response.json())
     .then(data => {
         showMessage(data.message, data.success ? 'success' : 'error');
-
+        
+        // Limpia el formulario si el registro fue exitoso
         if (data.success) {
-            this.reset(); // Limpiar formulario si es exitoso
+            this.reset();
         }
     })
     .catch(error => {
         showMessage('Ocurrió un error al procesar la solicitud.', 'error');
     });
 });
+
+    function showMessage(message, type) {
+        var messageDiv = document.createElement('div');
+        messageDiv.className = type === 'success' ? 'success-message' : 'error-message';
+        messageDiv.textContent = message;
+        document.body.appendChild(messageDiv);
+
+        setTimeout(() => {
+            messageDiv.remove();
+        }, 3000);
+    }
 </script>
-</body>
-</html>
